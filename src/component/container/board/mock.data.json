@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Backlog",
+        "description": "tasks needs to be Done",
+        "taskList": [
+            {
+                "name": "Task1",
+                "description": "Writing an API",
+                "dueDate": "2018-01-11",
+                "status": "Backlog"
+            },
+            {
+                "name": "Task2",
+                "description": "Writing an API 2",
+                "dueDate": "2018-01-11",
+                "status": "Backlog"
+            },
+            {
+                "name": "Task3",
+                "description": "Writing an API 3",
+                "dueDate": "2018-01-11",
+                "status": "Backlog"
+            },
+            {
+                "name": "Task4",
+                "description": "Writing an API 4",
+                "dueDate": "2018-01-11",
+                "status": "Backlog"
+            }
+        ]
+    },
+    {
+        "name": "Doing",
+        "description": "tasks in progress",
+        "taskList": [
+            {
+                "name": "Task1",
+                "description": "Writing an API",
+                "dueDate": "2018-01-11",
+                "status": "Doing"
+            },
+            {
+                "name": "Task2",
+                "description": "Writing an API 2",
+                "dueDate": "2018-01-11",
+                "status": "Doing"
+            },
+            {
+                "name": "Task3",
+                "description": "Writing an API 3",
+                "dueDate": "2018-01-11",
+                "status": "Doing"
+            },
+            {
+                "name": "Task4",
+                "description": "Writing an API 4",
+                "dueDate": "2018-01-11",
+                "status": "Doing"
+            }
+        ]
+    },
+    {
+        "name": "Done",
+        "description": "tasks needs to be Done",
+        "taskList": [
+            {
+                "name": "Task1",
+                "description": "Writing an API",
+                "dueDate": "2018-01-11",
+                "status": "Done"
+            },
+            {
+                "name": "Task2",
+                "description": "Writing an API 2",
+                "dueDate": "2018-01-11",
+                "status": "Done"
+            },
+            {
+                "name": "Task3",
+                "description": "Writing an API 3",
+                "dueDate": "2018-01-11",
+                "status": "Done"
+            },
+            {
+                "name": "Task4",
+                "description": "Writing an API 4",
+                "dueDate": "2018-01-11",
+                "status": "Done"
+            }
+        ]
+    }
+]

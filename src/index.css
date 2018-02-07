@@ -1,0 +1,190 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	position: relative;
+	height: 100%;
+}
+
+body {
+	font: 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+	line-height: 18px;
+	color: #4d4d4d;
+	font-weight: normal;
+	padding: 0 10px;
+	background-color: #ffffff;
+	position: relative;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+main {
+	padding: 50px 10px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	height: 100%;
+	white-space: nowrap;
+}
+
+.desk,
+.desk-placeholder,
+.desk-placeholder:hover {
+	width: 270px;
+	display: inline-block;
+	height: 100%;
+	overflow: hidden;
+	min-height: 100px;
+	background-color: #e2e4e6;
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	border-radius: 3px;
+	padding-bottom: 20px;
+	margin-right: 20px;
+	vertical-align: top;
+}
+
+.desk .desk-head,
+.desk-placeholder .desk-head,
+.desk-placeholder:hover .desk-head {
+	position: relative;
+	padding: 5px 8px;
+	margin-bottom: 10px;
+}
+
+.desk .desk-head .desk-name,
+.desk-placeholder .desk-head .desk-name,
+.desk-placeholder:hover .desk-head .desk-name {
+	font-weight: bold;
+	white-space: normal;
+	width: 100%;
+}
+
+.desk-items {
+	overflow-y: auto;
+	height: 100%;
+	padding-bottom: 20px;
+}
+
+.desk-items .placeholder,
+.desk-items .placeholder:hover {
+	height: 161px;
+	background-color: #d0d0d0;
+}
+
+.item {
+	width: 90%;
+	margin: 0 auto 10px;
+	background: #fff;
+	min-height: 100px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	transition: 0.15s;
+	cursor: pointer;
+	background-color: #f2f2f2
+}
+
+.item:hover {
+	background: #f7f7f7;
+}
+
+.item .item-name {
+	padding: 5px 10px;
+	border-bottom: 1px solid #dbdbdb;
+	white-space: normal;
+	word-break: break-all;
+	word-wrap: break-world;
+}
+
+.item .item-container {
+	padding: 10px;
+	border-bottom: 1px solid #dbdbdb;
+}
+
+.item .item-container .item-avatar-wrap {
+	width: 70px;
+	float: left;
+	margin-bottom: 5px;
+}
+
+.item .item-container .item-avatar-wrap img {
+	width: 50px;
+	height: 50px;
+	display: block;
+	margin: 0 auto;
+	border-radius: 50%;
+	border: 1px solid #dbdbdb;
+}
+
+.item .item-container .item-content {
+	white-space: normal;
+}
+
+.item .item-container .item-content .item-author {
+	font-size: 16px;
+	font-weight: bolder;
+}
+
+.item .item-container .item-content p {
+	margin: 5px 0;
+}
+
+.item .item-perfomers {
+	padding: 5px 10px;
+}
+
+.item .item-perfomers .add-perfomers {
+	float: left;
+}
+
+.item .item-perfomers .delete-perfomers {
+	float: right;
+}
+
+.item .item-perfomers .add-perfomers a,
+.item .item-perfomers .delete-perfomers a {
+	display: block;
+	float: left;
+	margin-right: 3px;
+}
+
+.item .item-perfomers .add-perfomers a img,
+.item .item-perfomers .delete-perfomers a img {
+	width: 15px;
+	height: 15px;
+}
+
+.item .item-perfomers .add-perfomers .perfomer,
+.item .item-perfomers .delete-perfomers .perfomer {
+	float: left;
+}
+
+.item .item-perfomers .add-perfomers .perfomer img,
+.item .item-perfomers .delete-perfomers .perfomer img {
+	display: block;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+}

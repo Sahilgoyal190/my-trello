@@ -1,0 +1,53 @@
+.card {
+    background-color: #f2f2f2;
+    margin: 10px;
+    border-radius: 5px;
+    min-height: 180px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, .5);
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.card h2 {
+    text-align: center;
+}
+
+.chart {
+    float: right;
+    height: 100px;
+    width: 100px;
+}
+
+.green-false {
+    border-left: 10px solid red;
+}
+
+.green-true {
+    border-left: 10px solid green;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0
+}
+
+.desc {
+    font-style: italic
+}
+
+.block::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 4px;
+}
+.red::before{
+    background-color: #ff0000;
+}
+.green::before{
+    background-color: #00ff00;
+}
+.yellow::before{
+    background-color: yellow;
+}
