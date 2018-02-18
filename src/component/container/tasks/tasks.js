@@ -5,7 +5,7 @@ import Task from '../../presentation/task';
 import './main.css'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { updateTaskEdit, updateCurrentTask, currentListName, currentTaskType } from '../../../actions/board';
+import { updateCurrentTask, currentListName, currentTaskType } from '../../../actions/board';
 import { updateModalStatus } from '../../../actions/common';
 
 
@@ -87,7 +87,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         updateModalStatusAction: bindActionCreators(updateModalStatus, dispatch),
-        updateTaskEditAction: bindActionCreators(updateTaskEdit, dispatch),
         updateCurrentTaskAction: bindActionCreators(updateCurrentTask, dispatch),
         currentListNameAction: bindActionCreators(currentListName, dispatch),
         currentTaskTypeAction: bindActionCreators(currentTaskType, dispatch),

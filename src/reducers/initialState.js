@@ -1,6 +1,7 @@
 export default {
   board: {
     lists: [],
+    board_id: null,
     currentTask: null,
     index: null,
     currentListName: null,
@@ -10,7 +11,8 @@ export default {
     data: []
   },
   common: {
-    modalOpen: false
+    modalOpen: false,
+    headerText:'Home'
   }
 };
 

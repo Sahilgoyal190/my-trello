@@ -1,13 +1,42 @@
 
 import * as Type from '../constant';
+import axios from 'axios';
+import { request } from 'graphql-request';
 const lists = require('../component/container/board/mock.data.json')
-
 
 export const getBoardData = (board_id) => {
     return (dispatch) => {
-        dispatch({
-            type: Type.UPDATE_BOARD_DATA,
-            lists: lists
+
+        const query = `{
+            board(id: ${board_id}) {
+                id,
+                project_name,
+                backlog,
+                doing,
+                done,
+                lists {
+                  description,
+                  name,
+                  taskList {
+                    name,
+                    description,
+                    status,
+                    dueDate
+                  }
+                }
+              } 
+          }`
+
+          request('http://localhost:3000/graphql',query).then(({board}) => {
+            dispatch({
+                type: Type.UPDATE_BOARD_DATA,
+                lists: board.lists,
+                board_id: board_id,
+            })
+            dispatch({
+                type: Type.UPDATE_HEADER_NAME,
+                text: board.project_name,
+            })
         })
     }
 }
@@ -31,12 +60,18 @@ export const updateTaskEdit = task => (dispatch, getState) => {
                 }
             })
             currentList.taskList.push(task);
-            dispatch({
-                type: Type.ADD_NEW_TASK,
-                list: currentList,
-                index
+
+            const newboardState = { ...getState().board };
+            newboardState.lists[index] = currentList;
+            const board_id = getState().board.board_id;
+            axios.post(`http://localhost:3000/boards/${board_id}`, { lists: newboardState.lists }).then((resp) => {
+                dispatch({
+                    type: Type.UPDATE_BOARD_DATA,
+                    lists: newboardState.lists,
+                })
+                resolve()
             })
-            resolve()
+
         })
     } else if (getState().board.currentTaskType == "edit") {
         return new Promise((resolve, reject) => {
@@ -65,15 +100,14 @@ export const updateTaskEdit = task => (dispatch, getState) => {
 
             }
 
-            dispatch({
-                type: Type.UPDATE_BOARD_DATA,
-                lists: newlist
+            const board_id = getState().board.board_id;
+            axios.post(`http://localhost:3000/boards/${board_id}`, { lists: newlist }).then((resp) => {
+                dispatch({
+                    type: Type.UPDATE_BOARD_DATA,
+                    lists: newlist
+                })
+                resolve()
             })
-            resolve()
         })
     }
 }
-
-// export const addNewtaskToList = task => (dispatch, getState) => {
-
-// }

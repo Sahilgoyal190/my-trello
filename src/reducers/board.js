@@ -4,7 +4,7 @@ import * as Type from '../constant';
 export const board = (state = initialState.board, action) => {
     switch (action.type) {
         case Type.UPDATE_BOARD_DATA:
-            return { ...state, lists: action.lists }
+            return { ...state, lists: action.lists, board_id: action.board_id }
         case Type.UPDATE_CURRENT_CARD:
             return { ...state, currentTask: action.currentTask, index: action.index }
         case Type.UPDATE_CURRENT_LIST_NAME:

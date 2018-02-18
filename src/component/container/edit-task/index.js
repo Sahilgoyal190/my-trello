@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateTaskEdit } from '../../../actions/board';
 import { updateModalStatus } from '../../../actions/common';
-
+import { dateTime } from '../../../utils';
 
 class EditTask extends React.Component {
 
@@ -14,21 +14,15 @@ class EditTask extends React.Component {
             dueDate: this.dueDate.value,
             status: this.status.value
         }
-        // if (this.props.addTask) {
-        //     this.props.addNewtaskToListAction(newtask).then(() => {
-        //         this.props.updateModalStatusAction(false);
-        //     })
-        // } else {
-            this.props.updateTaskEditAction(newtask).then(() => {
-                this.props.updateModalStatusAction(false);
-            })
-        // }
+        this.props.updateTaskEditAction(newtask).then(() => {
+            this.props.updateModalStatusAction(false);
+        })
 
     }
 
     render() {
-        const { name, description, dueDate, status } = this.props.task;
-
+        const { name, description, dueDate, status, } = this.props.task;
+        const modifiedvalue = dateTime(dueDate)
         return (
             <div className="panel panel-default">
                 <div className="panel-heading">
@@ -47,16 +41,16 @@ class EditTask extends React.Component {
                             <div className="input-group input-group-sm" title="DueDate">
                                 <span className="input-group-addon"><i className="glyphicon glyphicon-calendar"></i></span>
                                 <input type="date" className="form-control" placeholder="Task Name.."
-                                    ref={(dueDate) => this.dueDate = dueDate} defaultValue={dueDate} />
+                                    ref={(dueDate) => this.dueDate = dueDate} defaultValue={modifiedvalue} />
                             </div>
                         </div>
                         <div className="col-md-6">
                             <div className="input-group input-group-sm" title="DueDate">
                                 <span className="input-group-addon">Status</span>
                                 <select className="form-control" defaultValue={status} ref={(status) => this.status = status}>
-                                    <option value="Backlog">Backlog</option>
-                                    <option value="Doing">Doing</option>
-                                    <option value="Done">Done</option>
+                                    <option value="backlog">Backlog</option>
+                                    <option value="doing">Doing</option>
+                                    <option value="done">Done</option>
                                 </select>
                             </div>
                         </div>

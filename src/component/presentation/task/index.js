@@ -1,6 +1,6 @@
 import React from 'react';
 import './main.css';
-
+import {dateTime} from '../../../utils';
 
 const Task = ({ task, handleClick, index }) => {
     return (
@@ -12,7 +12,7 @@ const Task = ({ task, handleClick, index }) => {
                 </div>
             </div>
             <div className="item-perfomers">
-                    Due-Date: <span className="duedate">{task.dueDate}</span>
+                    Due-Date: <span className="duedate">{dateTime(task.dueDate)}</span>
             </div>
         </div>
     )
